@@ -30,7 +30,14 @@ class Program
 
                     if (!string.IsNullOrEmpty(newTodo))
                     {
-                        Program.todoList.Add(newTodo);
+                        if (todoList.Contains(newTodo))
+                        {
+                            Console.WriteLine("This todo is already on the list.");
+                        }
+                        else
+                        {
+                            Program.todoList.Add(newTodo);
+                        }
                     }
                     break;
                 case "R":
